@@ -119,7 +119,7 @@ function Cart() {
               <div className="text-xl">
                 TOTAL: ${parseFloat(totalPrice).toFixed(2)}
               </div>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col-reverse md:flex-row flex-wrap gap-4">
                 <button
                   onClick={() => clearCart()}
                   className="flex justify-center items-center gap-2 w-full md:max-w-60 bg-red-700 hover:bg-red-600 text-white p-3 tracking-widest"
@@ -127,7 +127,7 @@ function Cart() {
                   <DeleteForeverIcon fontSize="small" />
                   Clear Cart
                 </button>
-                <button className="flex justify-center items-center gap-2 w-full md:max-w-60 bg-neutral-950 hover:bg-neutral-800 text-white p-2 tracking-widest">
+                <button className="flex justify-center items-center gap-2 w-full md:max-w-60 bg-neutral-950 hover:bg-neutral-800 text-white p-3 tracking-widest">
                   <ShoppingCartCheckoutIcon fontSize="small" />
                   Checkout
                 </button>
