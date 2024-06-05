@@ -25,7 +25,7 @@ function Cart() {
     <div className="min-h-svh text-black">
       <Navbar customStyles={"bg-black text-white"} cartIcon={"hidden"} />
       <section>
-        <div className="px-4 lg:m-10">
+        <div className="px-4 my-4 lg:m-10">
           <button
             onClick={() => history.back()}
             className="w-fit cursor-pointer"
