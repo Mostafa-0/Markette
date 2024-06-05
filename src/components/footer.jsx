@@ -2,7 +2,7 @@ function Footer() {
   return (
     <footer className="bg-black mt-8 p-4 py-6 sm:px-12 text-white">
       <h2 className="text-[7vw] sm:text-4xl font-bold tracking-wide mb-2">
-        Marke<span>tt</span>e
+        Marke<span className="colored-letters">tt</span>e
       </h2>
       <p className="text-sm">Copyright &copy; Markette 2024. All rights reserved</p>
     </footer>
