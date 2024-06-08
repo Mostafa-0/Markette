@@ -6,15 +6,24 @@ import Navbar from "./navbar";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function ProductDetails() {
-  const { products, cartBtns, updateBtnText } = useContext(productContext);
+  const { products, isLoading, cartBtns, updateBtnText } =
+    useContext(productContext);
   const { addToCart } = useContext(CartContext);
   const { id } = useParams();
   const product = products.find((product) => product.id === parseInt(id));
 
-  if (!product) {
+  if (isLoading) {
     return (
       <div className="min-h-dvh text-center text-xl grid place-items-center">
         Loading Product Details...
+      </div>
+    );
+  }
+
+  if (!product) {
+    return (
+      <div className="min-h-dvh text-center text-xl grid place-items-center">
+        Product Not Found.
       </div>
     );
   }

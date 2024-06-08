@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { useEffect } from "react";
 import "./index.css";
 import Home from "./components/home";
@@ -7,6 +12,7 @@ import ProductDetails from "./components/productDetails";
 import Footer from "./components/footer";
 import { CartContextProvider } from "./context/CartContext";
 import { ProductContextProvider } from "./context/productContext";
+import NotFound from "./components/notFound";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -29,9 +35,10 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/product/:id" element={<ProductDetails />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
+            <Footer />
           </Router>
-          <Footer />
         </CartContextProvider>
       </ProductContextProvider>
     </>
