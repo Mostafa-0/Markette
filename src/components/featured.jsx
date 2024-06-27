@@ -7,7 +7,7 @@ function Featured() {
   const { products } = useContext(productContext);
 
   if (!products || products.length < 1) {
-    return <div>Loading...</div>;
+    return;
   }
 
   const featuredProducts = [
