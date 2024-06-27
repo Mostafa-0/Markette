@@ -8,7 +8,7 @@ function Home() {
       <Header />
       <main>
         <Featured />
-        <hr className="mb-8"/>
+        <hr className="mb-8 m-auto max-w-[60%]"/>
         <Products />
       </main>
     </>

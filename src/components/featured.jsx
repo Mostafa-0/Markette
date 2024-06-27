@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { productContext } from "../context/productContext";
 import Carousel from "./carousel";
-import NewSign from "./newSign";
+import newArrival from "../assets/new-arrival.svg";
 
 function Featured() {
   const { products } = useContext(productContext);
@@ -22,7 +22,7 @@ function Featured() {
     <section className="m-auto my-4 p-4 lg:p-12">
       <div className="tracking-wider mb-12">
         <h2 className="text-xl sm:text-2xl md:text-3xl uppercase font-medium mb-4">
-          Discover Our Featured Products
+          Discover Our <span className="text-cyan-500">Featured</span> Products
         </h2>
         <p className="max-w-4xl">
           Explore our top-rated picks, specially chosen to showcase the best we
@@ -31,9 +31,15 @@ function Featured() {
           customer favorites!
         </p>
       </div>
-      <div className="m-auto relative">
+      <div
+        className="m-auto relative"
+      >
         <Carousel data={featuredProducts} />
-        <NewSign />
+        <img
+          src={newArrival}
+          alt="New Arrival"
+          className="w-24 sm:w-32 md:w-48 absolute -top-4 md:top-5 left-0"
+        />
       </div>
     </section>
   );
