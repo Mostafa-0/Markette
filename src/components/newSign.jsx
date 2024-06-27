@@ -1,4 +1,4 @@
-import scribbles from "../assets/scribbles";
+import scribbles from "../assets/scribbles.svg";
 
 function NewSign() {
   return (
