@@ -8,6 +8,7 @@ function Home() {
       <Header />
       <main>
         <Featured />
+        <hr className="mb-8"/>
         <Products />
       </main>
     </>

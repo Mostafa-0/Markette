@@ -1,7 +1,11 @@
-import { useState } from "react";
+import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
+import { useState, useEffect } from "react";
 
-const Carousel = ({ images }) => {
+const Carousel = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const images = data.map((p) => p.image);
+  console.log(images);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -15,30 +19,45 @@ const Carousel = ({ images }) => {
     setCurrentIndex(newIndex);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   return (
-    <div className="relative w-full max-w-4xl mx-auto mt-12 overflow-hidden shadow-xl p-4 rounded-lg">
+    <div className="overflow-hidden relative">
       <div
-        className=" grid grid-flow-col auto-cols-[100%] transition-transform duration-500"
+        className="grid grid-flow-col auto-cols-[100%] transition-transform duration-[2.5s]"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {images.map((image, index) => (
-          <div key={index} className="block w-full max-h-96">
-            <img src={image} alt={`Slide ${index}`} className="h-full m-auto" />
-          </div>
-        ))}
+        {data &&
+          data.map((item) => {
+            return (
+              <div
+                key={item.id}
+                className="p-4 md:p-8 sm:flex flex-row-reverse justify-center items-center gap-4"
+              >
+                <div
+                  className="w-full h-52 md:h-[400px] bg-contain bg-center bg-no-repeat mb-4"
+                  style={{ backgroundImage: `url(${item.image})` }}
+                ></div>
+                <div className="sm:max-w-[50%]">
+                  <h2 className="text-lg md:text-2xl font-bold mb-2 line-clamp-2">
+                    {item.title}
+                  </h2>
+                  <p className="line-clamp-3 md:line-clamp-none">
+                    {item.description}
+                  </p>
+                  <p className="text-red-600 text-lg font-medium">
+                    ${item.price}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
       </div>
-      <button
-        onClick={prevSlide}
-        className="absolute top-1/2 transform -translate-y-1/2 left-4 text-black p-2"
-      >
-        ❮
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute top-1/2 transform -translate-y-1/2 right-4 text-black p-2"
-      >
-        ❯
-      </button>
     </div>
   );
 };
