@@ -63,24 +63,24 @@ function Products() {
           filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="product flex flex-col w-full max-w-[420px] border-2 border-b-0 bg-white"
+              className="product flex flex-col w-full max-w-[400px] bg-white"
             >
-              <div className="p-12 hover:scale-110 transition duration-500">
+              <div className="p-12 min-h-80 border">
                 <Link to={`/product/${product.id}`}>
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="max-h-32 m-auto block"
+                    className="max-h-48 m-auto block hover:scale-110 transition duration-500"
                     loading="lazy"
                   />
                 </Link>
               </div>
               <div className="flex flex-col justify-between grow">
-                <div className="flex flex-col justify-between h-full gap-1 p-6">
+                <div className="flex flex-col justify-between h-full gap-1 py-3">
                   <div>
                     <p className="prose capitalize">{product.category}</p>
                     <Link to={`/product/${product.id}`}>
-                      <h4 className="text-xl font-bold mb-4 line-clamp-1">
+                      <h4 className="text-xl font-bold mb-4 line-clamp-2">
                         {product.title}
                       </h4>
                     </Link>
@@ -94,7 +94,7 @@ function Products() {
                     addToCart(product, product.id);
                     updateBtnText(product.id);
                   }}
-                  className="h-fit uppercase tracking-wider font-semibold p-3 bg-neutral-900 text-white hover:bg-black transition-all"
+                  className="h-fit uppercase tracking-wider font-semibold p-2 text-sm bg-white border border-neutral-900 hover:text-white hover:bg-neutral-900 transition-all"
                 >
                   {cartBtns[product.id] || "Add To Cart"}
                 </button>

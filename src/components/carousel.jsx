@@ -1,6 +1,7 @@
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Carousel = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,7 +43,9 @@ const Carousel = ({ data }) => {
                 <div
                   className="w-full h-52 md:h-[400px] bg-contain bg-center bg-no-repeat mb-4"
                   style={{ backgroundImage: `url(${item.image})` }}
-                ></div>
+                >
+                  <Link to={`/product/${item.id}`} className="block w-full h-full"></Link>
+                </div>
                 <div className="sm:max-w-[50%]">
                   <h2 className="text-lg md:text-2xl font-bold mb-2 line-clamp-2">
                     {item.title}
