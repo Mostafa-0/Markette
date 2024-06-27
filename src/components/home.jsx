@@ -1,3 +1,4 @@
+import Featured from "./featured";
 import Header from "./header";
 import Products from "./products";
 
@@ -6,7 +7,7 @@ function Home() {
     <>
       <Header />
       <main>
-        {/* <h2 className="px-12">Explore Our Products</h2> */}
+        <Featured />
         <Products />
       </main>
     </>
