@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { productContext } from "../context/productContext";
 import Carousel from "./carousel";
+import NewSign from "./newSign";
 
 function Featured() {
   const { products } = useContext(productContext);
@@ -19,7 +20,7 @@ function Featured() {
   ];
   return (
     <section className="m-auto my-4 p-4 lg:p-12">
-      <div className="tracking-wider mb-14 border-l-2 pl-2">
+      <div className="tracking-wider mb-12">
         <h2 className="text-xl sm:text-2xl md:text-3xl uppercase font-medium mb-4">
           Discover Our Featured Products
         </h2>
@@ -30,8 +31,9 @@ function Featured() {
           customer favorites!
         </p>
       </div>
-      <div className="m-auto">
+      <div className="m-auto relative">
         <Carousel data={featuredProducts} />
+        <NewSign />
       </div>
     </section>
   );
