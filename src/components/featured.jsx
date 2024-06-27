@@ -38,7 +38,7 @@ function Featured() {
         <img
           src={newArrival}
           alt="New Arrival"
-          className="w-24 sm:w-32 md:w-48 absolute -top-4 md:top-5 left-0"
+          className="w-24 sm:w-32 md:w-40 absolute -top-4 md:top-5 left-0"
         />
       </div>
     </section>
