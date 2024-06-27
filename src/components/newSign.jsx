@@ -1,5 +1,4 @@
-// import scribbles from "../assets/scribbles.svg";
-import scribbles from "../assets/empty-cart.png";
+import scribbles from "../assets/scribbles";
 
 function NewSign() {
   return (
