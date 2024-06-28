@@ -6,7 +6,6 @@ import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRound
 const Carousel = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = data.map((p) => p.image);
-  console.log(images);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -23,7 +22,7 @@ const Carousel = ({ data }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 8000);
+    }, 7000);
     return () => clearInterval(interval);
   }, [currentIndex]);
 
