@@ -28,7 +28,7 @@ function Cart() {
         <div className="px-4 my-4 lg:m-10">
           <button
             onClick={() => history.back()}
-            className="w-fit cursor-pointer p-2 rounded-md mb-2 outline outline-2 outline-slate-100 hover:bg-slate-50"
+            className="w-fit cursor-pointer mb-2 hover:text-neutral-600"
           >
             <ArrowBackIcon fontSize="medium" />
           </button>
