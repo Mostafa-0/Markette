@@ -31,7 +31,7 @@ nav,
 
 header {
   border-image: fill 1
-    linear-gradient(hsla(0, 84%, 40%, 0.4) 0%, hsla(25, 95%, 33%, 0.4) 100%);
+    linear-gradient(hsla(0, 84%, 30%, 0.4) 0%, hsla(25, 95%, 23%, 0.4) 100%);
 }
 
 header {
