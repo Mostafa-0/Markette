@@ -30,7 +30,7 @@ const Carousel = ({ data }) => {
   return (
     <div className="overflow-hidden relative">
       <div
-        className="grid grid-flow-col auto-cols-[100%] transition-transform duration-[2.5s]"
+        className="grid grid-flow-col auto-cols-[100%] transition-transform duration-[2s]"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {data &&
@@ -70,20 +70,22 @@ const Carousel = ({ data }) => {
             );
           })}
       </div>
-      <button
-        className="absolute bottom-3 inset-x-0 -translate-x-8 rounded-lg p-2 bg-slate-100 w-fit m-auto hover:outline outline-2 outline-slate-200"
-        onClick={prevSlide}
-      >
-        <span className="sr-only">Previous Slide</span>
-        <ArrowBackIosRoundedIcon />
-      </button>
-      <button
-        className="absolute bottom-3 inset-x-0 translate-x-8 rounded-lg p-2 bg-slate-100 w-fit m-auto hover:outline outline-2 outline-slate-200"
-        onClick={nextSlide}
-      >
-        <span className="sr-only">Next Slide</span>
-        <ArrowForwardIosRoundedIcon />
-      </button>
+      <div className="w-fit m-auto my-1 flex gap-3">
+        <button
+          className="rounded-lg p-2 bg-slate-100 hover:outline outline-2 outline-slate-200"
+          onClick={prevSlide}
+        >
+          <span className="sr-only">Previous Slide</span>
+          <ArrowBackIosRoundedIcon />
+        </button>
+        <button
+          className="rounded-lg p-2 bg-slate-100 hover:outline outline-2 outline-slate-200"
+          onClick={nextSlide}
+        >
+          <span className="sr-only">Next Slide</span>
+          <ArrowForwardIosRoundedIcon />
+        </button>
+      </div>
     </div>
   );
 };
