@@ -5,7 +5,7 @@ function Hero() {
         Markette
       </h1>
       <p className="text-lg tracking-wide uppercase">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Discover the perfect blend of style and convenience at your fingertips.
       </p>
       <a
         href="#featured"
