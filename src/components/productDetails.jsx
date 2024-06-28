@@ -31,7 +31,7 @@ function ProductDetails() {
   return (
     <>
       <Navbar customStyles={"text-black"}></Navbar>
-      <div className="px-4 py-14 md:p-14 lg:p-24">
+      <div className="px-4 py-14 md:p-14 lg:p-16">
         <button
           onClick={() => history.back()}
           className="w-fit cursor-pointer px-4 lg:mx-10 mb-2 hover:text-orange-500"

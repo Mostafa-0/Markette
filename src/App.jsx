@@ -18,7 +18,9 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    document.documentElement.style.scrollBehavior = "auto";
+    window.scrollTo({ top: 0, behavior: "auto" });
+    document.documentElement.style.scrollBehavior = "smooth";
   }, [pathname]);
 
   return null;
