@@ -31,12 +31,12 @@ function ProductDetails() {
   return (
     <>
       <Navbar customStyles={"text-black"}></Navbar>
-      <div className="px-4 py-14 md:p-14 lg:p-16">
+      <div className="px-4 py-8 sm:p-14 lg:p-16">
         <button
           onClick={() => history.back()}
-          className="w-fit cursor-pointer px-4 lg:mx-10 mb-2 hover:text-orange-500"
+          className="w-fit cursor-pointer p-2 rounded-md mb-2 outline outline-2 outline-slate-100 hover:bg-slate-50"
         >
-          <ArrowBackIcon fontSize="medium" />
+          <ArrowBackIcon />
         </button>
         <div className="flex flex-col md:flex-row gap-12 justify-evenly items-center p-4">
           <div className="w-full m-auto lg:w-fit lg:m-0">

@@ -71,14 +71,14 @@ const Carousel = ({ data }) => {
       </div>
       <div className="w-fit m-auto my-1 flex gap-3 text-neutral-800">
         <button
-          className="rounded-lg p-2 bg-slate-100 hover:text-orange-500"
+          className="rounded-lg p-2 bg-slate-100 hover:text-orange-500 border"
           onClick={prevSlide}
         >
           <span className="sr-only">Previous Slide</span>
           <ArrowBackIosRoundedIcon />
         </button>
         <button
-          className="rounded-lg p-2 bg-slate-100 hover:text-orange-500"
+          className="rounded-lg p-2 bg-slate-100 hover:text-orange-500 border"
           onClick={nextSlide}
         >
           <span className="sr-only">Next Slide</span>
