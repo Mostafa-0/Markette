@@ -1,4 +1,5 @@
 function Hero() {
+
   return (
     <section className="hero my-auto flex flex-col justify-center gap-4">
       <h1 className="text-[18vw] sm:text-8xl lg:text-[10rem] 2xl:text-[9vw] font-bold tracking-wide">
@@ -7,12 +8,12 @@ function Hero() {
       <p className="text-lg lg:text-2xl tracking-wide uppercase md:max-w-[80%]">
         Discover the perfect blend of style and convenience at your fingertips.
       </p>
-      <a
-        href="#featured"
-        className="hero-btn relative w-fit text-lg lg:text-xl font-semibold px-6 text-white z-10"
+      <button
+        onClick={() => document.getElementById("featured").scrollIntoView()}
+        className="hero-btn relative w-fit text-lg font-semibold px-6 text-white z-10"
       >
         SHOP NOW!
-      </a>
+      </button>
     </section>
   );
 }
