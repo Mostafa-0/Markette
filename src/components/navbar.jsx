@@ -21,7 +21,7 @@ function Navbar({ customStyles, cartIcon }) {
           <ShoppingCartIcon fontSize="small" titleAccess="Cart" />
         </Link>
         {cartAmount > 0 && (
-          <div className="bg-[#3ab5d0] text-white text-sm font-semibold grid place-content-center w-[21px] h-[21px] rounded-full absolute -top-1 -right-2">
+          <div className="bg-orange-500 text-white text-sm font-semibold grid place-content-center w-[21px] h-[21px] rounded-full absolute -top-1 -right-2">
             {cartAmount}
           </div>
         )}

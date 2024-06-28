@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ArrowBackIosRoundedIcon from "@mui/icons-material/ArrowBackIosRounded";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 
 const Carousel = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,7 +23,7 @@ const Carousel = ({ data }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 6000);
+    }, 8000);
     return () => clearInterval(interval);
   }, [currentIndex]);
 
@@ -42,9 +44,12 @@ const Carousel = ({ data }) => {
                   className="w-full h-52 md:h-[400px] bg-contain bg-center bg-no-repeat mb-4 hover:scale-105 transition duration-500"
                   style={{ backgroundImage: `url(${item.image})` }}
                 >
-                  <Link to={`/product/${item.id}`} className="block w-full h-full"></Link>
+                  <Link
+                    to={`/product/${item.id}`}
+                    className="block w-full h-full"
+                  ></Link>
                 </div>
-                <div className="sm:max-w-[50%]">
+                <div className="sm:max-w-[50%] grid gap-2">
                   <h2 className="text-lg md:text-2xl font-bold mb-2 line-clamp-2">
                     {item.title}
                   </h2>
@@ -54,11 +59,31 @@ const Carousel = ({ data }) => {
                   <p className="text-red-600 text-lg font-medium">
                     ${item.price}
                   </p>
+                  <Link
+                    to={`/product/${item.id}`}
+                    className="w-fit py-1 px-8 uppercase font-medium bg-neutral-900 text-white bg-gradient-to-r from-red-500 to-orange-500 hover:brightness-110"
+                  >
+                    Buy Now!
+                  </Link>
                 </div>
               </div>
             );
           })}
       </div>
+      <button
+        className="absolute bottom-3 inset-x-0 -translate-x-8 rounded-lg p-2 bg-slate-100 w-fit m-auto hover:outline outline-2 outline-slate-200"
+        onClick={prevSlide}
+      >
+        <span className="sr-only">Previous Slide</span>
+        <ArrowBackIosRoundedIcon />
+      </button>
+      <button
+        className="absolute bottom-3 inset-x-0 translate-x-8 rounded-lg p-2 bg-slate-100 w-fit m-auto hover:outline outline-2 outline-slate-200"
+        onClick={nextSlide}
+      >
+        <span className="sr-only">Next Slide</span>
+        <ArrowForwardIosRoundedIcon />
+      </button>
     </div>
   );
 };

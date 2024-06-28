@@ -122,12 +122,12 @@ function Cart() {
               <div className="flex flex-col-reverse md:flex-row flex-wrap gap-4">
                 <button
                   onClick={() => clearCart()}
-                  className="flex justify-center items-center gap-2 w-full md:max-w-60 bg-red-700 hover:bg-red-600 text-white p-3 tracking-widest"
+                  className="flex justify-center items-center gap-2 w-full md:max-w-60 bg-red-700 hover:bg-red-600 text-white p-2 tracking-widest"
                 >
                   <DeleteForeverIcon fontSize="small" />
                   Clear Cart
                 </button>
-                <button className="flex justify-center items-center gap-2 w-full md:max-w-60 bg-neutral-950 hover:bg-neutral-800 text-white p-3 tracking-widest">
+                <button className="flex justify-center items-center gap-2 w-full md:max-w-60 bg-neutral-950 hover:bg-neutral-800 text-white p-2 tracking-widest">
                   <ShoppingCartCheckoutIcon fontSize="small" />
                   Checkout
                 </button>
@@ -136,7 +136,7 @@ function Cart() {
             <div className="text-center p-4 mb-6 lg:p-12">
               <Link
                 to="/"
-                className="p-2 tracking-widest font-semibold border-b-2 border-stone-800 hover:text-[#3298af] hover:border-[#3298af]"
+                className="p-2 tracking-widest font-semibold border-b-2 border-stone-800 hover:text-orange-500 hover:border-orange-500"
               >
                 Continue Shopping
               </Link>

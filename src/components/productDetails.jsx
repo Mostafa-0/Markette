@@ -55,7 +55,7 @@ function ProductDetails() {
                 <p className="prose text-lg">{product.category}</p>
               </div>
               <p className="md:text-xl tracking-wide">{product.description}</p>
-              <div className="tracking-wider font-medium text-xl text-red-700">
+              <div className="tracking-wider font-medium text-xl text-red-600">
                 ${parseFloat(product.price).toFixed(2)}
               </div>
             </div>
@@ -64,7 +64,7 @@ function ProductDetails() {
                 addToCart(product, product.id);
                 updateBtnText(product.id);
               }}
-              className="uppercase h-fit tracking-wider font-semibold p-3 bg-neutral-900 text-white hover:bg-neutral-800 transition-all"
+              className="uppercase h-fit tracking-wider font-semibold p-2 bg-neutral-900 text-white hover:bg-neutral-800 transition-all"
             >
               {cartBtns[product.id] || "Add To Cart"}
             </button>
