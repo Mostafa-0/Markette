@@ -16,7 +16,7 @@ function Navbar({ customStyles, cartIcon }) {
       >
         <Link
           to="/Cart"
-          className="relative p-2 text-black hover:text-neutral-600"
+          className="relative p-2 text-black hover:text-orange-500"
         >
           <ShoppingCartIcon fontSize="small" titleAccess="Cart" />
         </Link>

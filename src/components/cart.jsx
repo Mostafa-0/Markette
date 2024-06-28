@@ -56,11 +56,11 @@ function Cart() {
 
         {cart.length != 0 && (
           <>
-            <div className="lg:px-12 p-4 grid gap-4 tracking-wide">
+            <div className="p-4 md:px-12 grid gap-4 tracking-wide">
               {cart.map((item) => (
                 <div
                   key={item.id}
-                  className="grid lg:grid-cols-2 gap-y-6 border-b-2 py-6"
+                  className="grid md:grid-cols-2 gap-y-6 border-b-2 py-6"
                 >
                   <Link
                     to={`/product/${item.id}`}
@@ -69,7 +69,7 @@ function Cart() {
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="max-w-28 m-auto"
+                      className="max-w-36 m-auto"
                     />
                   </Link>
                   <div className="flex flex-col gap-6 justify-around lg:px-8">
@@ -115,14 +115,14 @@ function Cart() {
               ))}
             </div>
 
-            <div className="grid gap-4 text-md tracking-widest p-4 lg:px-12">
+            <div className="grid gap-4 text-md tracking-wide p-4 lg:px-12">
               <div className="text-xl">
                 TOTAL: ${parseFloat(totalPrice).toFixed(2)}
               </div>
               <div className="flex flex-col-reverse md:flex-row flex-wrap gap-4">
                 <button
                   onClick={() => clearCart()}
-                  className="flex justify-center items-center gap-2 w-full md:max-w-60 bg-red-700 hover:bg-red-600 text-white p-2 tracking-widest"
+                  className="flex justify-center items-center gap-2 w-full md:max-w-60 bg-red-600 hover:bg-red-500 text-white p-2 tracking-widest"
                 >
                   <DeleteForeverIcon fontSize="small" />
                   Clear Cart

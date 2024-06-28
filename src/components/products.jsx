@@ -63,9 +63,9 @@ function Products() {
           filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="product flex flex-col w-full max-w-[400px] bg-white"
+              className="product flex flex-col w-full md:max-w-[325px] bg-white"
             >
-              <div className="p-12 min-h-80 border">
+              <div className="p-12 min-h-80 border" title={product.title}>
                 <Link to={`/product/${product.id}`}>
                   <img
                     src={product.image}
@@ -80,12 +80,15 @@ function Products() {
                   <div>
                     <p className="prose capitalize">{product.category}</p>
                     <Link to={`/product/${product.id}`}>
-                      <h4 className="text-xl font-bold mb-4 line-clamp-2">
+                      <h4
+                        className="text-xl font-bold mb-2 md:line-clamp-1"
+                        title={product.title}
+                      >
                         {product.title}
                       </h4>
                     </Link>
                   </div>
-                  <div className="tracking-wide font-semibold text-xl">
+                  <div className="tracking-wide font-semibold text-xl text-red-600">
                     ${parseFloat(product.price).toFixed(2)}
                   </div>
                 </div>
@@ -94,7 +97,7 @@ function Products() {
                     addToCart(product, product.id);
                     updateBtnText(product.id);
                   }}
-                  className="h-fit uppercase tracking-wider font-semibold p-2 text-sm bg-white border border-neutral-900 hover:text-white hover:bg-neutral-900 transition-all"
+                  className="h-fit uppercase tracking-wider font-semibold p-2 text-sm bg-white border border-neutral-900 hover:text-white hover:border-orange-500 hover:bg-orange-500 transition-all"
                 >
                   {cartBtns[product.id] || "Add To Cart"}
                 </button>

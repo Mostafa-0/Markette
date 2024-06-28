@@ -34,7 +34,7 @@ function ProductDetails() {
       <div className="px-4 py-14 md:p-14 lg:p-24">
         <button
           onClick={() => history.back()}
-          className="w-fit cursor-pointer px-4 lg:mx-10 mb-2"
+          className="w-fit cursor-pointer px-4 lg:mx-10 mb-2 hover:text-orange-500"
         >
           <ArrowBackIcon fontSize="medium" />
         </button>
@@ -64,7 +64,7 @@ function ProductDetails() {
                 addToCart(product, product.id);
                 updateBtnText(product.id);
               }}
-              className="uppercase h-fit tracking-wider font-semibold p-2 bg-neutral-900 text-white hover:bg-neutral-800 transition-all"
+              className="uppercase h-fit tracking-wider font-semibold p-2 bg-neutral-900 text-white hover:bg-orange-500 transition-all"
             >
               {cartBtns[product.id] || "Add To Cart"}
             </button>
