@@ -48,7 +48,7 @@ header {
   }
 }
 
-.hero-btn::after {
+.show-now-btn::after {
   border-radius: inherit;
   content: "";
   position: absolute;
@@ -66,7 +66,7 @@ header {
   transition: all 280ms ease-out;
 }
 
-.hero-btn::before {
+.show-now-btn::before {
   border-radius: inherit;
   content: "";
   position: absolute;
@@ -78,6 +78,6 @@ header {
   z-index: -1;
 }
 
-.hero-btn:hover::after {
+.show-now-btn:hover::after {
   opacity: 1;
 }

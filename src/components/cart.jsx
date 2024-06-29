@@ -32,7 +32,7 @@ function Cart() {
           >
             <ArrowBackIcon fontSize="medium" />
           </button>
-          <h1 className="text-2xl border-b-2 py-4  tracking-wide font-semibold">
+          <h1 className="text-2xl border-b-2 py-4 tracking-wide font-semibold">
             SHOPPING CART ({cartAmount})
           </h1>
         </div>
@@ -47,7 +47,7 @@ function Cart() {
             <p>Looks like your cart is empty, Start adding some items!</p>
             <Link
               to="/"
-              className="my-8 uppercase bg-neutral-900 hover:bg-neutral-800 text-white w-full max-w-48 p-1 tracking-widest"
+              className="show-now-btn relative my-8 uppercase text-white w-full max-w-48 px-4 tracking-widest"
             >
               Shop now!
             </Link>

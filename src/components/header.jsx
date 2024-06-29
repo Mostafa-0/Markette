@@ -3,7 +3,7 @@ import Hero from "./hero";
 
 function Header() {
   return (
-    <header className="h-svh flex flex-col text-white">
+    <header className="min-h-svh flex flex-col text-white">
       <Navbar />
       <Hero />
     </header>
