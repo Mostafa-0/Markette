@@ -81,3 +81,12 @@ header {
 .show-now-btn:hover::after {
   opacity: 1;
 }
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="search"]::-moz-search-cancel-button {
+  display: none;
+}

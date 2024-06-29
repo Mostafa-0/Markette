@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useRef } from "react";
 import { productContext } from "../context/productContext";
 import ProductItem from "./productItem";
 
@@ -6,6 +6,7 @@ function Products() {
   const { products, error, isLoading } = useContext(productContext);
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("");
+  const searchInputRef = useRef(null);
 
   const filteredProducts = products?.filter((product) => {
     const matchesQuery = query
@@ -24,6 +25,20 @@ function Products() {
     "Women's Clothing",
   ];
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchInputRef.current) {
+      searchInputRef.current.blur();
+    }
+  };
+
+  const clearSearch = () => {
+    setQuery("");
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  };
+
   return (
     <section id="shop" className="mb-12">
       <h2 className="text-center text-2xl md:text-3xl mb-4">
@@ -36,8 +51,8 @@ function Products() {
       {!isLoading && !error && (
         <div className="flex flex-wrap gap-4 justify-around items-center px-4 md:p-4">
           <form
-            className="flex items-center gap-2 w-full max-w-lg"
-            onSubmit={(e) => e.preventDefault()}
+            className="flex items-center gap-2 w-full max-w-lg relative"
+            onSubmit={handleSearchSubmit}
           >
             <label htmlFor="default-search" className="sr-only">
               Search For a Product:
@@ -66,8 +81,31 @@ function Products() {
                 placeholder="Search for a product"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
+                ref={searchInputRef}
                 className="w-full p-2 ps-10 text-sm text-gray-900 bg-gray-50 border focus:border-gray-400 focus:outline-none"
               />
+              {query && (
+                <button
+                  type="button"
+                  onClick={clearSearch}
+                  className="absolute inset-y-0 end-0 flex items-center pe-3"
+                >
+                  <svg
+                    className="w-4 h-4 text-gray-500"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M10 10l5-5m-5 5l-5 5m5-5l-5-5m5 5l5 5"
+                    />
+                  </svg>
+                </button>
+              )}
             </div>
           </form>
 
