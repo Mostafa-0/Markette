@@ -12,7 +12,7 @@ function ProductItem({ product }) {
       key={product.id}
       className="product flex flex-col w-full md:max-w-[325px] bg-white"
     >
-      <div className="p-12 min-h-80 border" title={product.title}>
+      <div className="p-12 min-h-80 border grid place-items-center" title={product.title}>
         <Link to={`/product/${product.id}`}>
           <img
             src={product.image}

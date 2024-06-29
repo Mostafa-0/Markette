@@ -35,7 +35,10 @@ function Products() {
 
       {!isLoading && !error && (
         <div className="flex flex-wrap gap-4 justify-around items-center px-4 md:p-4">
-          <form className="flex items-center gap-2 w-full max-w-lg">
+          <form
+            className="flex items-center gap-2 w-full max-w-lg"
+            onSubmit={(e) => e.preventDefault()}
+          >
             <label htmlFor="default-search" className="sr-only">
               Search For a Product:
             </label>
