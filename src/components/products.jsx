@@ -40,7 +40,7 @@ function Products() {
   };
 
   return (
-    <section id="shop" className="mb-12">
+    <section id="shop" className="my-12">
       <h2 className="text-center text-2xl md:text-3xl mb-4">
         Explore Our Products
       </h2>

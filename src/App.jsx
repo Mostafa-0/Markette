@@ -13,6 +13,7 @@ import Footer from "./components/footer";
 import { CartContextProvider } from "./context/CartContext";
 import { ProductContextProvider } from "./context/productContext";
 import NotFound from "./components/notFound";
+import Products from "./components/products";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -35,6 +36,7 @@ function App() {
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
               <Route path="/product/:id" element={<ProductDetails />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="*" element={<NotFound />} />
