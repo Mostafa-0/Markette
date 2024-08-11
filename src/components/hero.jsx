@@ -10,7 +10,7 @@ function Hero() {
       </p>
       <button
         onClick={() => document.getElementById("featured").scrollIntoView()}
-        className="show-now-btn relative w-fit text-lg font-semibold px-6 text-white z-10"
+        className="shop-now-btn relative w-fit text-lg font-semibold px-6 text-white z-10"
       >
         SHOP NOW!
       </button>

@@ -14,6 +14,7 @@ import { CartContextProvider } from "./context/CartContext";
 import { ProductContextProvider } from "./context/productContext";
 import NotFound from "./components/notFound";
 import Products from "./components/products";
+import Navbar from "./components/navbar";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -29,23 +30,25 @@ const ScrollToTop = () => {
 
 function App() {
   return (
-    <>
-      <ProductContextProvider>
-        <CartContextProvider>
-          <Router>
-            <ScrollToTop />
+    <ProductContextProvider>
+      <CartContextProvider>
+        <Router>
+          <Navbar />
+          <ScrollToTop />
+          <div>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path="/product/:id" element={<ProductDetails />} />
+              <Route path="/category/:category" element={<Products />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-            <Footer />
-          </Router>
-        </CartContextProvider>
-      </ProductContextProvider>
-    </>
+          </div>
+          <Footer />
+        </Router>
+      </CartContextProvider>
+    </ProductContextProvider>
   );
 }
 

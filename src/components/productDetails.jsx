@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { productContext } from "../context/productContext";
 import { CartContext } from "../context/CartContext";
-import Navbar from "./navbar";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function ProductDetails() {
@@ -30,7 +29,6 @@ function ProductDetails() {
 
   return (
     <>
-      <Navbar customStyles={"text-black"}></Navbar>
       <div className="px-4 py-8 sm:p-14 lg:p-16">
         <button
           onClick={() => history.back()}

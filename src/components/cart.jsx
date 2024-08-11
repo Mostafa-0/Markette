@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
-import Navbar from "./navbar";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -22,8 +21,7 @@ function Cart() {
   } = useContext(CartContext);
 
   return (
-    <div className="min-h-svh text-black">
-      <Navbar customStyles={"bg-black text-white"} cartIcon={"hidden"} />
+    <div className="text-black">
       <section>
         <div className="px-4 my-4 lg:m-10">
           <button
@@ -47,7 +45,7 @@ function Cart() {
             <p>Looks like your cart is empty, Start adding some items!</p>
             <Link
               to="/"
-              className="show-now-btn relative my-8 uppercase text-white w-full max-w-48 px-4 tracking-widest"
+              className="shop-now-btn relative my-8 uppercase text-white w-full max-w-48 px-4 tracking-widest"
             >
               Shop now!
             </Link>

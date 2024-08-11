@@ -7,24 +7,6 @@
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  width: 1vw;
-  height: 1vh;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgb(60, 60, 60);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: black;
-}
-
-::-webkit-scrollbar-track {
-  background: #eee;
-}
-
-nav,
 .hero {
   padding: 1rem 4vw;
 }
@@ -48,7 +30,7 @@ header {
   }
 }
 
-.show-now-btn::after {
+.shop-now-btn::after {
   border-radius: inherit;
   content: "";
   position: absolute;
@@ -66,7 +48,7 @@ header {
   transition: all 280ms ease-out;
 }
 
-.show-now-btn::before {
+.shop-now-btn::before {
   border-radius: inherit;
   content: "";
   position: absolute;
@@ -78,7 +60,7 @@ header {
   z-index: -1;
 }
 
-.show-now-btn:hover::after {
+.shop-now-btn:hover::after {
   opacity: 1;
 }
 
