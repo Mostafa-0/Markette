@@ -32,7 +32,9 @@ function Products() {
     if (routeCategory) {
       setCategory(routeCategory);
     }
-  }, [routeCategory, setCategory]);
+
+    setQuery("");
+  }, [routeCategory, setCategory, setQuery]);
 
   return (
     <section id="shop" className="my-12">
