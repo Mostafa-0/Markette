@@ -2,12 +2,11 @@ import { NavLink } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import PersonIcon from "@mui/icons-material/Person";
 import SearchIcon from "@mui/icons-material/Search";
 import { CartContext } from "../context/CartContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
-const CustomNavLink = ({ to, label, children }) => {
+const CustomNavLink = ({ to, label, children, onClick }) => {
   return (
     <NavLink
       to={to}
@@ -18,6 +17,7 @@ const CustomNavLink = ({ to, label, children }) => {
       }
       aria-label={label}
       title={label}
+      onClick={onClick}
     >
       {children}
     </NavLink>
@@ -27,21 +27,55 @@ const CustomNavLink = ({ to, label, children }) => {
 function Navbar() {
   const { cartAmount } = useContext(CartContext);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const menuRef = useRef(null);
 
   const handleMenu = () => {
-    console.log("hi");
-
     setMenuOpen(!menuOpen);
   };
 
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("touchstart", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollY > lastScrollY ? setShowNavbar(false) : setShowNavbar(true);
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <nav className="w-max fixed top-0 right-1/2 left-1/2 -translate-x-1/2 z-50 mt-4 flex items-center justify-between gap-8 rounded-full bg-orange-100 bg-opacity-70 backdrop-blur-md py-3 px-6">
+    <nav
+      className={`w-max fixed top-0 right-1/2 left-1/2 -translate-x-1/2 z-50 mt-4 flex items-center justify-between gap-8 rounded-full bg-orange-100 bg-opacity-70 backdrop-blur-md py-3 px-6 transition ${
+        showNavbar ? "translate-y-0" : "-translate-y-[150%]"
+      }`}
+    >
       <button onClick={handleMenu} className="hover:text-orange-400">
         {!menuOpen && <MenuIcon fontSize="medium" titleAccess="Menu" />}
         {menuOpen && <CloseIcon fontSize="medium" titleAccess="Menu" />}
       </button>
 
       <div
+        ref={menuRef}
         className={`absolute top-[115%] w-max inset-x-0 rounded-md py-4 px-6 transition grid gap-4 bg-orange-50
           ${
             menuOpen
@@ -49,19 +83,35 @@ function Navbar() {
               : "scale-0 -translate-y-[60%] -translate-x-[30%]"
           }`}
       >
-        <CustomNavLink to="/" label="Home">
+        <CustomNavLink to="/" label="Home" onClick={() => setMenuOpen(false)}>
           Home
         </CustomNavLink>
-        <CustomNavLink to="/category/Men's Clothing" label="Mens Clothing">
-          Men's Clothing
+        <CustomNavLink
+          to="/category/Men's Clothing"
+          label="Mens Clothing"
+          onClick={() => setMenuOpen(false)}
+        >
+          Men&apos;s Clothing
         </CustomNavLink>
-        <CustomNavLink to="/category/Women's Clothing" label="Women's Clothing">
-          Women's Clothing
+        <CustomNavLink
+          to="/category/Women's Clothing"
+          label="Women's Clothing"
+          onClick={() => setMenuOpen(false)}
+        >
+          Women&apos;s Clothing
         </CustomNavLink>
-        <CustomNavLink to="/category/Jewelery" label="Jewelery">
+        <CustomNavLink
+          to="/category/Jewelery"
+          label="Jewelery"
+          onClick={() => setMenuOpen(false)}
+        >
           Jewelery
         </CustomNavLink>
-        <CustomNavLink to="/category/Electronics" label="Electronics">
+        <CustomNavLink
+          to="/category/Electronics"
+          label="Electronics"
+          onClick={() => setMenuOpen(false)}
+        >
           Electronics
         </CustomNavLink>
       </div>
