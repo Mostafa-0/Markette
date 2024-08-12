@@ -44,7 +44,7 @@ function Products() {
       {isLoading && <div className="text-center text-lg m-8">Loading...</div>}
 
       {!isLoading && !error && (
-        <div className="flex flex-wrap gap-4 justify-around items-center px-4 md:p-4">
+        <div className="grid gap-4 justify-center px-4 md:p-4">
           <SearchBar
             query={query}
             setQuery={setQuery}

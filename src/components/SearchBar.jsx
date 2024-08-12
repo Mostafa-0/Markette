@@ -12,7 +12,7 @@ function SearchBar({ query, setQuery, handleSearchSubmit }) {
 
   return (
     <form
-      className="flex items-center gap-2 w-full max-w-lg relative"
+      className="flex items-center gap-2 w-full relative"
       onSubmit={handleSearchSubmit}
     >
       <label htmlFor="default-search" className="sr-only">

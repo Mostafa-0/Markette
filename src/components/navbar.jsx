@@ -12,7 +12,7 @@ const CustomNavLink = ({ to, label, children }) => {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `cursor-pointer text-lg tracking-wider ${
+        `cursor-pointer text-lg tracking-wider hover:text-orange-400 ${
           isActive ? "text-orange-400" : ""
         }`
       }
@@ -35,16 +35,19 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex items-center justify-between gap-2 sticky top-0 z-50 w-full bg-orange-50 py-4 px-6">
-      <button onClick={handleMenu}>
+    <nav className="w-max fixed top-0 right-1/2 left-1/2 -translate-x-1/2 z-50 mt-4 flex items-center justify-between gap-8 rounded-full bg-orange-100 bg-opacity-70 backdrop-blur-md py-3 px-6">
+      <button onClick={handleMenu} className="hover:text-orange-400">
         {!menuOpen && <MenuIcon fontSize="medium" titleAccess="Menu" />}
         {menuOpen && <CloseIcon fontSize="medium" titleAccess="Menu" />}
       </button>
 
       <div
-        className={`absolute top-full h-svh left-0 -translate-x-[120%] py-4 px-6 transition flex flex-col gap-4 bg-orange-50
-          min-w-[25%]
-          ${menuOpen ? "translate-x-0" : ""}`}
+        className={`absolute top-[115%] w-max inset-x-0 rounded-md py-4 px-6 transition grid gap-4 bg-orange-50
+          ${
+            menuOpen
+              ? "scale-100"
+              : "scale-0 -translate-y-[60%] -translate-x-[30%]"
+          }`}
       >
         <CustomNavLink to="/" label="Home">
           Home
@@ -63,23 +66,22 @@ function Navbar() {
         </CustomNavLink>
       </div>
 
-      <div className="flex items-center gap-4">
-        <button
-          onClick={() => document.getElementById("shop").scrollIntoView()}
-        >
-          <SearchIcon fontSize="medium" titleAccess="Search" />
-        </button>
-        <CustomNavLink to="/cart" label="Electronics">
-          <div className="relative">
-            <ShoppingCartIcon fontSize="medium" titleAccess="Cart" />
-            {cartAmount > 0 && (
-              <div className="bg-orange-400 text-white text-xs font-semibold grid place-content-center w-[20px] h-[20px] rounded-full absolute -top-1 -right-2">
-                {cartAmount}
-              </div>
-            )}
-          </div>
-        </CustomNavLink>
-      </div>
+      <button
+        className="hover:text-orange-400"
+        onClick={() => document.getElementById("shop").scrollIntoView()}
+      >
+        <SearchIcon fontSize="medium" titleAccess="Search" />
+      </button>
+      <CustomNavLink to="/cart" label="Electronics">
+        <div className="relative">
+          <ShoppingCartIcon fontSize="medium" titleAccess="Cart" />
+          {cartAmount > 0 && (
+            <div className="bg-orange-400 text-white text-xs font-semibold grid place-content-center w-[20px] h-[20px] rounded-full absolute -top-1 -right-2">
+              {cartAmount}
+            </div>
+          )}
+        </div>
+      </CustomNavLink>
     </nav>
   );
 }
