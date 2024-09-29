@@ -27,8 +27,6 @@ const CustomNavLink = ({ to, label, children, onClick }) => {
 function Navbar() {
   const { cartAmount } = useContext(CartContext);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const menuRef = useRef(null);
 
   const handleMenu = () => {
@@ -52,22 +50,9 @@ function Navbar() {
     };
   }, [menuOpen]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      window.scrollY > lastScrollY ? setShowNavbar(false) : setShowNavbar(true);
-      setLastScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
-
   return (
     <nav
-      className={`w-max fixed top-0 right-1/2 left-1/2 -translate-x-1/2 z-50 mt-4 flex items-center justify-between gap-8 rounded-full bg-orange-100 bg-opacity-70 backdrop-blur-md py-3 px-6 transition ${
-        showNavbar ? "translate-y-0" : "-translate-y-[150%]"
-      }`}
+      className="w-max fixed top-0 right-1/2 left-1/2 -translate-x-1/2 z-50 mt-4 flex items-center justify-between gap-8 rounded-full bg-orange-100 bg-opacity-70 backdrop-blur-md py-3 px-6 transition"
     >
       <button onClick={handleMenu} className="hover:text-orange-400">
         {!menuOpen && <MenuIcon fontSize="medium" titleAccess="Menu" />}
