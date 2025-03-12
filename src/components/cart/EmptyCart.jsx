@@ -3,8 +3,8 @@ import emptyCart from "../../assets/empty-cart.webp";
 
 function EmptyCart() {
   return (
-    <div className="grid place-items-center gap-4 p-4">
-      <img src={emptyCart} alt="empty cart" className="block w-full max-w-64" />
+    <div className="flex flex-col justify-center items-center gap-4 p-4 min-h-[60svh]">
+      <img src={emptyCart} alt="empty cart" className="block w-full max-w-40 md:max-w-64" />
       <p className="text-center text-neutral-500">
         Looks like your cart is empty, Start adding some items!
       </p>
