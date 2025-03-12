@@ -54,14 +54,20 @@ const Carousel = ({ data }) => {
                 <Link
                   to={`/product/${item.id}`}
                   className="block w-full h-full"
-                />
+                >
+                  <span className="sr-only">Product&apos;s Details</span>
+                </Link>
               </div>
 
               {/* Product Detais */}
-              <div>
-                <h3 className="text-base lg:text-lg mb-2">{item.title}</h3>
-                <p className="text-sm lg:text-base">{item.description}</p>
-                <div className="text-lg lg:text-xl font-bold my-2 text-orange-600">
+              <div className="flex flex-col gap-4">
+                <h3 className="text-base lg:text-lg line-clamp-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm lg:text-base line-clamp-3">
+                  {item.description}
+                </p>
+                <div className="text-lg lg:text-xl font-bold text-primary">
                   ${item.price.toFixed(2)}
                 </div>
                 <button
@@ -80,7 +86,7 @@ const Carousel = ({ data }) => {
       </div>
 
       {/* Dots for navigation */}
-      <div className="flex space-x-2 mt-1 justify-center">
+      <div className="flex space-x-2 my-1 justify-center">
         {data.map((_, index) => (
           <button
             key={index}
@@ -88,13 +94,15 @@ const Carousel = ({ data }) => {
               index === currentIndex ? "bg-black" : "bg-gray-400"
             }`}
             onClick={() => setCurrentIndex(index)}
-          ></button>
+          >
+            <span className="sr-only">Slide number {index + 1}</span>
+          </button>
         ))}
       </div>
 
       {/* Navigation buttons */}
       <button
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-100 border bg-opacity-40 p-2 rounded-full hover:text-orange-500 transition-transform duration-300 hover:scale-110"
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-100 border bg-opacity-40 p-2 rounded-full hover:text-primary transition-transform duration-300 hover:scale-110"
         onClick={prevSlide}
         title="Previous Slide"
         aria-label="Previous Slide"
@@ -102,7 +110,7 @@ const Carousel = ({ data }) => {
         <ArrowBackIosRoundedIcon fontSize="small" />
       </button>
       <button
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-100 border bg-opacity-40 p-2 rounded-full hover:text-orange-500 transition-transform duration-300 hover:scale-110"
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-100 border bg-opacity-40 p-2 rounded-full hover:text-primary transition-transform duration-300 hover:scale-110"
         onClick={nextSlide}
         title="Next Slide"
         aria-label="Next Slide"

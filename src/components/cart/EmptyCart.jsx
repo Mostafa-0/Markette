@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import emptyCart from "../../assets/empty-cart.png";
+import emptyCart from "../../assets/empty-cart.webp";
 
 function EmptyCart() {
   return (

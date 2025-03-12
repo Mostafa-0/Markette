@@ -29,7 +29,7 @@ function ProductItem({ product }) {
             {product.title}
           </h3>
         </Link>
-        <div className="text-lg font-semibold text-orange-600">
+        <div className="text-lg font-semibold text-primary">
           ${parseFloat(product.price).toFixed(2)}
         </div>
       </div>

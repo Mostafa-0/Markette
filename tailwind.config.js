@@ -4,7 +4,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        primary: "#DE2E22"
+      },
       animation: {
         shimmer: "shimmer 2.5s linear infinite",
       },

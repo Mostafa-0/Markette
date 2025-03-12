@@ -55,7 +55,7 @@ function Cart() {
           <div className="grid gap-4 mt-4">
             <div>
               Total:{" "}
-              <span className="text-orange-600 font-bold">
+              <span className="text-primary font-bold">
                 ${parseFloat(totalPrice).toFixed(2)}
               </span>
             </div>

@@ -22,7 +22,7 @@ function Loading() {
           strokeWidth="5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-orange-600"
+          className="text-primary"
         ></path>
       </svg>
     </div>

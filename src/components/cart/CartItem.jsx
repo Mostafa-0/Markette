@@ -21,6 +21,7 @@ function CartItem({
           alt={item.title}
           className="w-full h-full object-contain"
         />
+        <span className="sr-only">Product&apos;s Details</span>
       </Link>
 
       {/* Product Details */}
@@ -36,7 +37,7 @@ function CartItem({
           <div>
             {item.quantity} x ${item.price}
           </div>
-          <div className="text-orange-600 font-semibold">
+          <div className="text-primary font-semibold">
             ${parseFloat(item.price * item.quantity).toFixed(2)}
           </div>
         </div>

@@ -58,9 +58,7 @@ function Products() {
             <div className="flex flex-wrap gap-4 justify-center">
               <button
                 className={`rounded-md py-2 px-4 transition text-sm border ${
-                  category === ""
-                    ? "bg-orange-200 border-orange-200"
-                    : "bg-slate-100"
+                  category === "" ? "bg-primary/10 border-primary/15" : "bg-gray-100"
                 }`}
                 onClick={() => setCategory("")}
               >
@@ -71,8 +69,8 @@ function Products() {
                   key={categ}
                   className={`rounded-md py-2 px-4 transition text-sm border ${
                     category === categ
-                      ? "bg-orange-200 border-orange-200"
-                      : "bg-slate-100 "
+                      ? "bg-primary/10 border-primary/15"
+                      : "bg-gray-100"
                   }`}
                   onClick={() => setCategory(categ)}
                 >

@@ -15,8 +15,8 @@ const CustomNavLink = ({ to, label, children, setIsOpen }) => {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `py-3 lg:py-5 cursor-pointer tracking-wider hover:text-orange-600 ${
-          isActive ? "text-orange-600" : ""
+        `py-3 lg:py-5 cursor-pointer tracking-wider hover:text-primary ${
+          isActive ? "text-primary" : ""
         }`
       }
       aria-label={label}
@@ -118,7 +118,7 @@ function Navbar() {
         <div className="relative">
           <ShoppingCartIcon fontSize="medium" titleAccess="Cart" />
           {cartAmount > 0 && (
-            <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-[11px] font-semibold grid place-content-center size-5 rounded-full">
+            <div className="absolute -top-2 -right-2 bg-primary text-white text-[11px] font-semibold grid place-content-center size-5 rounded-full">
               {cartAmount}
             </div>
           )}

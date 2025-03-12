@@ -1,4 +1,4 @@
-import cart from "../assets/cart.png";
+import cart from "../assets/cart.webp";
 function Hero() {
   return (
     <header className="hero min-h-[82vh] flex gap-8 flex-col lg:flex-row justify-center lg:justify-around items-center text-black">

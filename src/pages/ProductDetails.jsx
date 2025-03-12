@@ -52,17 +52,17 @@ function ProductDetails() {
         {/* Details Section */}
         <div className="flex flex-col gap-3 md:gap-6 md:max-w-xl">
           <div>
-            <h1 className="text-xl md:text-2xl font-semibold">
-              {product.title}
-            </h1>
             <p className="text-gray-500 text-sm capitalize">
               {product.category}
             </p>
+            <h1 className="text-xl md:text-2xl font-semibold">
+              {product.title}
+            </h1>
           </div>
 
           <p className="text-gray-700 leading-relaxed">{product.description}</p>
 
-          <div className="text-lg md:text-xl font-semibold text-orange-600">
+          <div className="text-lg md:text-xl font-semibold text-primary">
             ${parseFloat(product.price).toFixed(2)}
           </div>
 
