@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  /* border: 1px solid seagreen; */
+}
+
+body {
+  @apply text-sm lg:text-base;
+}
+
+main,
+nav,
+footer,
+.hero {
+  padding: 1rem 4vw;
+}
+
+main {
+  @apply py-8;
+}
+
+h2 {
+  @apply text-center text-2xl md:text-3xl font-bold mb-4;
+}
+
+h3 {
+  @apply text-xl md:text-2xl font-semibold;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="search"]::-moz-search-cancel-button {
+  display: none;
+}
