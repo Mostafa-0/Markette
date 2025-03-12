@@ -41,7 +41,7 @@ function ProductDetails() {
       </button>
 
       {/* Product Layout */}
-      <div className="flex flex-col md:flex-row gap-12 lg:gap-16 xl:gap-24 items-center justify-center py-6">
+      <div className="flex flex-col md:flex-row gap-12 lg:gap-16 xl:gap-24 items-center justify-center py-6 min-h-[65svh]">
         {/* Image Section */}
         <img
           src={product.image}

@@ -25,7 +25,7 @@ function ProductItem({ product }) {
       <div className="flex flex-col gap-1 py-2">
         <p className="text-sm text-gray-500 capitalize">{product.category}</p>
         <Link to={`/product/${product.id}`}>
-          <h3 className="text-lg lg:text-xl font-bold text-gray-900">
+          <h3 className="text-lg lg:text-xl font-bold text-gray-900 line-clamp-2">
             {product.title}
           </h3>
         </Link>

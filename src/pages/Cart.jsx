@@ -37,7 +37,7 @@ function Cart() {
       {cart.length === 0 ? (
         <EmptyCart />
       ) : (
-        <div className="w-full max-w-2xl mx-auto py-6">
+        <div className="w-full max-w-2xl mx-auto py-6 min-h-[65svh] flex flex-col justify-center">
           {/* Cart Items List */}
           <div className="flex flex-col items-center py-8 gap-14">
             {cart.map((item) => (
